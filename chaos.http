@@ -1,0 +1,17 @@
+# Install the "REST Client" extension (humao.rest-client) in VS Code,
+# then click "Send Request" above any line starting with ###.
+
+### 1. Get orders (goes through the repository and the database)
+GET http://localhost:5081/api/orders
+
+### 2. Show current chaos settings
+GET http://localhost:5081/chaos
+
+### 3. Database flaky: 50% timeouts (default)
+POST http://localhost:5081/chaos/db/50
+
+### 4. Database fully down: 100% timeouts
+POST http://localhost:5081/chaos/db/100
+
+### 5. Database healthy: 0% timeouts
+POST http://localhost:5081/chaos/db/0
